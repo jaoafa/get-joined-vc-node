@@ -51,8 +51,8 @@ jobs:
       - name: Run compile 🏗️
         run: yarn compile
 
-      - name: Run pack 🎁
-        run: yarn pack
+      - name: Run package 🎁
+        run: yarn package
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2

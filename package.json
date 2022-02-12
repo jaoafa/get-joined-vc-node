@@ -9,7 +9,7 @@
   "scripts": {
     "build": "ts-node ./src/main.ts",
     "dev": "ts-node-dev ./src/main.ts",
-    "pack": "ncc build ./dist/main.js -o output/",
+    "package": "ncc build ./dist/main.js -o output/",
     "start": "node ./dist/main.js",
     "compile": "tsc -p .",
     "compile:test": "tsc -p . --noEmit",
