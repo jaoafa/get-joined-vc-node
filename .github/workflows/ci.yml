@@ -48,8 +48,8 @@ jobs:
       - name: Run linter 👀
         run: yarn lint
 
-      - name: Run build 🏗️
-        run: yarn build
+      - name: Run compile 🏗️
+        run: yarn compile
 
       - name: Run pack 🎁
         run: yarn pack
