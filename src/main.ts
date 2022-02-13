@@ -31,7 +31,7 @@ function getJoinedVC(token: string, userId: string): Promise<VoiceState[]> {
     .help()
     .parseSync()
 
-  const tokens = JSON.parse(
+  const tokens: string[] = JSON.parse(
     fs.readFileSync(path.join(__dirname, '/tokens.json')).toString()
   )
   const targetServers = JSON.parse(
@@ -39,11 +39,14 @@ function getJoinedVC(token: string, userId: string): Promise<VoiceState[]> {
   )
   const userId = argv.userId as string
 
+  const promises = await Promise.all(
+    tokens.map((token) => getJoinedVC(token, userId))
+  )
+
   const joinedVCs: VoiceState[] = []
-  for (const token of tokens) {
-    const tempJoinedVCs = await getJoinedVC(token, userId)
+  for (const ret of promises) {
     joinedVCs.push(
-      ...tempJoinedVCs.filter(
+      ...ret.filter(
         (vc) => !joinedVCs.some((vc2) => vc2.channelId === vc.channelId)
       )
     )
