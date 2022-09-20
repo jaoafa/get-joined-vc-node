@@ -1,4 +1,4 @@
-import { Client, Intents, VoiceState } from 'discord.js'
+import { Client, VoiceState } from 'discord.js'
 import * as fs from 'fs'
 import path from 'path'
 import * as yargs from 'yargs'
@@ -6,7 +6,7 @@ import * as yargs from 'yargs'
 function getJoinedVC(token: string, userId: string): Promise<VoiceState[]> {
   return new Promise((resolve, reject) => {
     const client = new Client({
-      intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_VOICE_STATES],
+      intents: ['Guilds', 'GuildVoiceStates'],
     })
     client.on('ready', () => {
       const result: VoiceState[] = []
