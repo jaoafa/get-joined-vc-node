@@ -22,7 +22,7 @@
     "fix:prettier": "prettier --write src"
   },
   "devDependencies": {
-    "@book000/eslint-config": "1.7.87",
+    "@book000/eslint-config": "1.7.88",
     "@types/node": "22.9.0",
     "@types/yargs": "17.0.33",
     "@vercel/ncc": "0.38.2",
