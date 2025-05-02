@@ -10,17 +10,24 @@ function getJoinedVC(token: string, userId: string): Promise<VoiceState[]> {
     const client = new Client({
       intents: ['Guilds', 'GuildVoiceStates'],
     })
-    client.on('ready', async () => {
-      const result: VoiceState[] = []
-      const guilds = await client.guilds.fetch()
-      for (const oauth2Guild of guilds.values()) {
-        const guild = await oauth2Guild.fetch()
-        const voiceState = guild.voiceStates.cache.get(userId)
-        if (!voiceState) continue
-        result.push(voiceState)
-      }
-      await client.destroy()
-      resolve(result)
+    client.on('ready', () => {
+      ;(async () => {
+        const result: VoiceState[] = []
+        const guilds = await client.guilds.fetch()
+        for (const oauth2Guild of guilds.values()) {
+          const guild = await oauth2Guild.fetch()
+          const voiceState = guild.voiceStates.cache.get(userId)
+          if (!voiceState) continue
+          result.push(voiceState)
+        }
+        await client.destroy()
+        resolve(result)
+      })().catch((error: unknown) => {
+        if (isDev) {
+          console.error('Error in ready event handler', error)
+        }
+        resolve([])
+      })
     })
 
     client.login(token).catch((error: unknown) => {
@@ -50,12 +57,11 @@ function getJoinedVC(token: string, userId: string): Promise<VoiceState[]> {
   )
   const userId = argv.userId as string
 
-  const promises = await Promise.all(
-    tokens.map((token) => getJoinedVC(token, userId)),
-  )
+  const promises = tokens.map(async (token) => await getJoinedVC(token, userId))
+  const results = await Promise.all(promises)
 
   const joinedVCs: VoiceState[] = []
-  for (const ret of promises) {
+  for (const ret of results) {
     joinedVCs.push(
       ...ret.filter(
         (vc) => !joinedVCs.some((vc2) => vc2.channelId === vc.channelId),
