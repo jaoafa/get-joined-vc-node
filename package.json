@@ -26,7 +26,7 @@
     "@types/node": "24.10.13",
     "@types/yargs": "17.0.35",
     "@vercel/ncc": "0.38.4",
-    "discord.js": "14.24.2",
+    "discord.js": "14.25.1",
     "eslint": "9.39.3",
     "eslint-config-standard": "17.1.0",
     "eslint-plugin-import": "2.32.0",
