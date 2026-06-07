@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@babel/helper-validator-identifier/-/helper-validator-identifier-7.28.5.tgz#010b6938fab7cb7df74aa2bbc06aa503b8fe5fb4"
   integrity sha512-qSs4ifwzKJSV39ucNjsvc6WVHs6b7S03sOh2OcHF9UHfVPqWWALUsNUVzhSBiItjRZoLHx7nIarVjqKVusUZ1Q==
 
-"@book000/eslint-config@1.14.53":
-  version "1.14.53"
-  resolved "https://registry.yarnpkg.com/@book000/eslint-config/-/eslint-config-1.14.53.tgz#f65c7c7df11256c9f599b9391d8a7f0b69d296fd"
-  integrity sha512-0f3F7jb6+DB1LBrioQO0LzIOMgRqVgYwm2F5CY6vb3osMgEJqll2aqPSEBpEXmZXMVPfg1tlCGHBZGaHT0GWIg==
+"@book000/eslint-config@1.14.54":
+  version "1.14.54"
+  resolved "https://registry.yarnpkg.com/@book000/eslint-config/-/eslint-config-1.14.54.tgz#38ec31bc5efd718d82e2c34e56d47b9da79c1b03"
+  integrity sha512-7+mzcda0YY+GpRwpn6zSPPzZOktKmeOFX1QNfdKJmwuhZlAie2nExXQ60f7d/OPMPNsWAcYHsrL19Y/tYeiZvw==
   dependencies:
     "@typescript-eslint/parser" "8.60.1"
     eslint-config-prettier "10.1.8"
