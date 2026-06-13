@@ -3,9 +3,10 @@
   "compilerOptions": {
     "target": "es2020",
     "module": "commonjs",
-    "moduleResolution": "Node",
+    "moduleResolution": "node10",
     "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
     "outDir": "./dist",
+    "rootDir": "./src",
     "removeComments": true,
     "esModuleInterop": true,
     "allowJs": true,
@@ -22,9 +23,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
-    "baseUrl": ".",
-    "newLine": "LF"
+    "newLine": "LF",
+    "types": ["node"]
   },
-  "include": ["src/**/*"],
-  "types": ["src/types/*.d.ts"]
+  "include": ["src/**/*"]
 }
