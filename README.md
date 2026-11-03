@@ -23,6 +23,6 @@ node dist/main.js --userId <ユーザー ID>
 
 ## 開発
 
-- `yarn dev -- --userId <ユーザー ID>`: ts-node-dev で実行する。この場合は設定ファイルを `src/` 直下に置く。
+- `yarn dev --userId <ユーザー ID>`: ts-node-dev で実行する。この場合は設定ファイルを `src/` 直下に置く。`src/` は Git の無視対象ではないため、`tokens.json` をコミットしないよう注意する。
 - `yarn lint`: Prettier、ESLint、tsc による検査を行う。
 - `yarn fix`: Prettier と ESLint の自動修正を行う。
