@@ -10,4 +10,3 @@
 ## 開発
 
 - パッケージマネージャーは Yarn v1。`yarn lint` で Prettier / ESLint / tsc を実行する。
-- `package.json` の `name` (`node-jaotan`) はリポジトリ名 (`get-joined-vc-node`) と一致していないが、現状のままとする。

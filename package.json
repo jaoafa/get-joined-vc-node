@@ -1,11 +1,11 @@
 {
-  "name": "node-jaotan",
+  "name": "get-joined-vc-node",
   "version": "1.0.4",
   "description": "Auxiliary application when Javajaotan does not work",
   "author": "Tomachi",
   "private": true,
   "main": "dist/index.js",
-  "repository": "git@github.com:jaoafa/node-jaotan.git",
+  "repository": "git@github.com:jaoafa/get-joined-vc-node.git",
   "scripts": {
     "build": "ts-node ./src/main.ts",
     "dev": "ts-node-dev ./src/main.ts",
