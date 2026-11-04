@@ -6,3 +6,5 @@ config/*
 !config/.gitkeep
 yarn-error.log
 output
+src/tokens.json
+src/targetServers.json
